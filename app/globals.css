@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-nb-white text-nb-black antialiased;
+  }
+}
+
+@layer components {
+  .nb-card {
+    @apply bg-white border-3 border-nb-black shadow-nb p-4 md:p-6;
+  }
+
+  .nb-button {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           font-heading font-bold text-lg
+           border-3 border-nb-black shadow-nb
+           transition-all duration-100
+           hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-nb-sm
+           active:translate-x-[4px] active:translate-y-[4px] active:shadow-none
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-nb;
+  }
+
+  .nb-button-primary {
+    @apply nb-button bg-nb-yellow hover:bg-nb-yellow-dark;
+  }
+
+  .nb-button-secondary {
+    @apply nb-button bg-white hover:bg-nb-gray;
+  }
+
+  .nb-button-danger {
+    @apply nb-button bg-nb-red text-white hover:bg-red-500;
+  }
+
+  .nb-button-success {
+    @apply nb-button bg-nb-green hover:bg-green-500;
+  }
+
+  .nb-input {
+    @apply w-full px-4 py-3
+           font-body text-lg
+           border-3 border-nb-black
+           bg-white
+           focus:outline-none focus:ring-0 focus:shadow-nb
+           placeholder:text-nb-gray-dark;
+  }
+
+  .nb-select {
+    @apply nb-input appearance-none cursor-pointer
+           bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231a1a1a%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')]
+           bg-no-repeat bg-[right_12px_center] bg-[length:24px];
+  }
+
+  .nb-textarea {
+    @apply nb-input min-h-[120px] resize-y;
+  }
+
+  .nb-label {
+    @apply block font-heading font-bold text-lg mb-2;
+  }
+
+  .nb-badge {
+    @apply inline-flex items-center px-3 py-1
+           font-heading font-bold text-sm uppercase tracking-wide
+           border-3 border-nb-black;
+  }
+
+  .nb-badge-submitted {
+    @apply nb-badge bg-nb-yellow;
+  }
+
+  .nb-badge-reviewed {
+    @apply nb-badge bg-nb-green;
+  }
+
+  .nb-badge-pending {
+    @apply nb-badge bg-nb-orange;
+  }
+
+  .nb-badge-failed {
+    @apply nb-badge bg-nb-red text-white;
+  }
+
+  .nb-badge-success {
+    @apply nb-badge bg-nb-teal;
+  }
+
+  .nb-nav {
+    @apply bg-white border-b-3 border-nb-black;
+  }
+
+  .nb-table {
+    @apply w-full border-3 border-nb-black;
+  }
+
+  .nb-table th {
+    @apply bg-nb-black text-white font-heading font-bold text-left p-4 uppercase tracking-wide;
+  }
+
+  .nb-table td {
+    @apply p-4 border-b-2 border-nb-black bg-white;
+  }
+
+  .nb-table tr:nth-child(even) td {
+    @apply bg-nb-gray;
+  }
+
+  .nb-link {
+    @apply font-bold underline underline-offset-4 decoration-3
+           hover:bg-nb-yellow transition-colors;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
